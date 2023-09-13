@@ -1,7 +1,6 @@
 package QuizGame;
 
-import QuizGame.Question;
-
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,27 +55,37 @@ public class Quiz {
         Collections.shuffle(quizQuestions);
     }
     public void start (){
-        Scanner input = new Scanner(System.in);
+            boolean rerunTest = true;
+            while (rerunTest){
+            rerunTest = false;
+            Scanner input = new Scanner(System.in);
 
-        //Gets user's name
-        System.out.println("What is your name?");
-        String name = input.nextLine();
+            //Gets user's name
+            System.out.println("What is your name?");
+            String name = input.nextLine();
 
-        //Ensures input isn't empty
-        if (name.length() < 1){
-            name = DEFAULT_NAME;
+            //Ensures input isn't empty
+            if (name.length() < 2) {
+                name = DEFAULT_NAME;
+            }
+
+            System.out.println("Welcome " + name + " to our QuizGame.Quiz!");
+
+            //Asks questions and keeps the score of them
+
+            int total = 0;
+            for (int i = 0; i < quizQuestions.size(); i++) {
+                System.out.print("Q" + (i + 1) + ": ");
+                total = total + askQuestion(quizQuestions.get(i));
+            }
+            System.out.println(name + " you scored " + total + "/" + getTotalValue());
+            int dialogButton = JOptionPane.showConfirmDialog (null, "Do you want to redo the quiz?", "Rerun quiz?", JOptionPane.YES_NO_OPTION);
+
+            if(dialogButton == JOptionPane.YES_OPTION) {
+            rerunTest = true;}
+            else {
+            System.exit(0);}
         }
-
-        System.out.println("Welcome " + name + " to our QuizGame.Quiz!");
-
-        //Asks questions and keeps the score of them
-
-        int total = 0;
-        for (int i = 0; i < quizQuestions.size(); i++){
-            System.out.print("Q" + (i + 1) + ": ");
-            total = total + askQuestion(quizQuestions.get(i));
-        }
-        System.out.println(name + " you scored " + total + "/" + getTotalValue());
     }
 
     public int askQuestion (Question q){
