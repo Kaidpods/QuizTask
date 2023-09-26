@@ -14,13 +14,18 @@ public class Person {
         this.surname = surname;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public void setAddress(Address address) {
         this.address = address;
     }
+
+    public Address getAddress() {
+        return address;
+    }
+
     public int getAge(){
         /*
         Compares the time between the DOB and today's date, can also be used to get
@@ -29,7 +34,7 @@ public class Person {
         Period difference = Period.between(dateOfBirth, LocalDate.now());
         return difference.getYears();
     }
-    public void setDataOfBirth(String dateOfBirth) throws Exception {
+    public void setDateOfBirth(String dateOfBirth) throws Exception {
         //check if a date of birth string was supplied before trying to split it
         if (!dateOfBirth.isEmpty()) {
             String[] data = dateOfBirth.split("-");
