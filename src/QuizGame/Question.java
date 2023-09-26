@@ -1,6 +1,6 @@
 package QuizGame;
 
-public class Question {
+public abstract class Question {
     private String question;
     private String answer;
 
@@ -46,10 +46,6 @@ public class Question {
     }
 
     public String toString() {
-        return "Question{" +
-                "question='" + question + '\'' +
-                ", answer ='" + answer + '\'' +
-                ", points=" + value +
-                '}';
+        return "Question{" + "question='" + question + '\'' + ", answer ='" + answer + '\'' + ", points=" + value + '}';
     }
 }

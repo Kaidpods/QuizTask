@@ -6,10 +6,13 @@ import java.util.Stack;
 
 /**
  * Player class, takes note of the scores as well as the name of the player
+ *
  * @author Kaidpods
  */
 public class Player extends Person {
     private Stack<Integer> previousScores = new Stack<>();
+
+    private int attempts = 0;
 
     public Player(String firstName, String surname) {
         super(firstName, surname);
@@ -23,10 +26,15 @@ public class Player extends Person {
         for (String val : csvScores) {
             try {
                 int iVal = Integer.parseInt(val);
+                previousScores.add(iVal);
             } catch (NumberFormatException nfe) {
                 System.err.println("Problem parsing previous score information.");
             }
         }
+    }
+
+    public Stack<Integer> getPreviousScores() {
+        return previousScores;
     }
 
     public void recordScore(int score) {
@@ -43,20 +51,23 @@ public class Player extends Person {
 
     }
 
+    public int getScoreSize() {
+        return previousScores.size();
+    }
+
     public int getHighestScore() {
         if (previousScores.size() > 0) {
             //clone the stack so we don't change the original
             Stack<Integer> working = (Stack<Integer>) previousScores.clone();
             //pop every element in the stack to findnew maximum score.
-//use a find maximum algorithm to find the highest score
-//use the working.pop() method to get a value from the stack.
+            //use a find maximum algorithm to find the highest score
+            //use the working.pop() method to get a value from the stack.
             int maxValue = working.pop();
             int size = working.size();
-            for (int i = 0; i < size; i++){
-                if (working.peek() > maxValue){
+            for (int i = 0; i < size; i++) {
+                if (working.peek() > maxValue) {
                     maxValue = working.pop();
-                }
-                else {
+                } else {
                     working.pop();
                 }
             }
@@ -64,6 +75,15 @@ public class Player extends Person {
         } else
             return 0;
     }
+
+    public int getAttempts() {
+        return attempts;
+    }
+
+    public void incAttempt() {
+        attempts++;
+    }
+
     @Override
     public String toString() {
         return "Player: " + super.getFullName() +

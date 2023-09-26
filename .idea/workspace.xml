@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="QuizTask:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9327e0b4-81b9-451e-960c-cec1d893a3c5" name="Changes" comment="Test">
-      <change afterPath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuizGame/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/QuizGame/PlayerTest.java" afterDir="false" />
+    <list default="true" id="9327e0b4-81b9-451e-960c-cec1d893a3c5" name="Changes" comment="Code adjusted to work with the testing.">
+      <change afterPath="$PROJECT_DIR$/src/QuizGame/Questions/TextQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuizTask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QuizTask.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/QuizTask_jar/QuizTask.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/QuizTask_jar/QuizTask.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Kaidpods/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Kaidpods/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/MutlipleChoiceQuestion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Question.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/TrueFalseQuestion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGame/MutlipleChoiceQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Questions/MutlipleChoiceQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGame/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGame/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGame/TrueFalseQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Questions/TrueFalseQuestion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,30 +66,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/mcevo/OneDrive - New College Lanarkshire/HNC Next Gen/IntelliJ/QuizTask",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mcevo/OneDrive - New College Lanarkshire/HNC Next Gen/IntelliJ/QuizTask&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mcevo\OneDrive - New College Lanarkshire\HNC Next Gen\IntelliJ\QuizTask\QuizTask\src\QuizGame" />
@@ -87,13 +101,13 @@
       <recent name="QuizGame" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Quiz">
     <configuration name="Quiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="QuizGame.Quiz" />
       <module name="QuizTask" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="QuizGame.*" />
+          <option name="PATTERN" value="QuizGame.Questions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,9 +115,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QuizTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="QuizGame.Questions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="QuizGame" />
+      <option name="MAIN_CLASS_NAME" value="QuizGame.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.emptyPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QuizTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="QuizGame.Questions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="QuizGame" />
+      <option name="MAIN_CLASS_NAME" value="QuizGame.PlayerTest" />
+      <option name="METHOD_NAME" value="emptyPlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Quiz" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest.emptyPlayer" />
         <item itemvalue="Application.Quiz" />
       </list>
     </recent_temporary>
@@ -142,14 +189,73 @@
       <option name="project" value="LOCAL" />
       <updated>1694611271645</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Completed JUnit Testing">
+      <created>1695715499276</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695715499276</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Code adjusted to work with the testing.">
+      <created>1695719531712</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695719531712</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Code adjusted to work with the testing.">
+      <created>1695719947962</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695719947962</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Code adjusted to work with the testing.">
+      <created>1695719976938</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695719976938</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Code adjusted to work with the testing.">
+      <created>1695722428499</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695722428499</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Completed JUnit Testing" />
+    <MESSAGE value="Code adjusted to work with the testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code adjusted to work with the testing." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/QuizGame/Kaidpods/Person.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

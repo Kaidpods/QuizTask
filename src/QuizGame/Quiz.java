@@ -1,11 +1,12 @@
 package QuizGame;
 
+import QuizGame.Questions.MutlipleChoiceQuestion;
+import QuizGame.Questions.TextQuestion;
+import QuizGame.Questions.TrueFalseQuestion;
+
 import javax.swing.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Quiz {
@@ -35,15 +36,15 @@ public class Quiz {
         for (int i = 0; i < numQ; i++) {
             switch (qType.get(i)) {
                 case 1 -> {
-                    Question newQ = new Question(questions.get(i), answers.get(i), value.get(i));
+                    Question newQ = new TextQuestion(questions.get(i), answers.get(i), value.get(i));
                     quizQuestions.add(newQ);
                 }
                 case 2 -> {
-                    TrueFalseQuestion newTFQ = new TrueFalseQuestion( questions.get(i), Boolean.parseBoolean(answers.get(i)), value.get(i));
+                    TrueFalseQuestion newTFQ = new TrueFalseQuestion(questions.get(i), Boolean.parseBoolean(answers.get(i)), value.get(i));
                     quizQuestions.add(newTFQ);
                 }
                 case 3 -> {
-                    MutlipleChoiceQuestion newMQ = new MutlipleChoiceQuestion( questions.get(i), answers.get(i), options.get(i), value.get(i));
+                    MutlipleChoiceQuestion newMQ = new MutlipleChoiceQuestion(questions.get(i), answers.get(i), options.get(i), value.get(i));
                     quizQuestions.add(newMQ);
                 }
             }
@@ -61,13 +62,20 @@ public class Quiz {
             //Gets user's name
             System.out.println("What is your name?");
             String name = input.nextLine();
+            File fileCheck = new File(name.toLowerCase() + ".csv");
+            Player livePlayer;
+            if (!fileCheck.exists()) {
+                livePlayer = new Player(name, "");
+            } else {
+                livePlayer = new Player(name, "", returnRead(name));
+            }
 
             //Ensures input isn't empty
             if (name.length() < 2) {
                 name = DEFAULT_NAME;
             }
 
-            System.out.println("Welcome " + name + " to our Quiz!");
+            System.out.println("Welcome " + livePlayer.getFirstName() + " to our Quiz!");
 
             //Asks questions and keeps the score of them
 
@@ -76,12 +84,19 @@ public class Quiz {
                 System.out.print("Q" + (i + 1) + ": ");
                 total = total + askQuestion(quizQuestions.get(i));
             }
+            livePlayer.incAttempt();
             System.out.println(name + " you scored " + total + "/" + getTotalValue());
+            System.out.println("You have attempted it " + livePlayer.getAttempts());
+            livePlayer.recordScore(total);
             int dialogButton = JOptionPane.showConfirmDialog(null, "Do you want to redo the quiz?", "Rerun quiz?", JOptionPane.YES_NO_OPTION);
 
             if (dialogButton == JOptionPane.YES_OPTION) {
                 rerunTest = true;
             } else {
+                writeToFile(toString(livePlayer), livePlayer);
+                System.out.println("Thank you for playing the quiz " + livePlayer.getFirstName());
+                System.out.println("Last score is: " + livePlayer.getPreviousScores());
+                System.out.println("Highest score is: " + livePlayer.getHighestScore());
                 System.exit(0);
             }
         }
@@ -100,21 +115,21 @@ public class Quiz {
 
         //If user entered nothing then it results in a zero
 
-                if (answer.length() < 1) {
-                    System.out.println("No answer supplied, 0 points rewarded.");
-                } else {
+        if (answer.length() < 1) {
+            System.out.println("No answer supplied, 0 points rewarded.");
+        } else {
 
-                    if (q.isCorrect(answer)) {
-                        System.out.println(answer + " is the correct answer, added " + q.getValue() + " to score.");
-                        score = q.getValue();
-                    } else {
-                        System.out.println(answer + " is the wrong answer, 0 points awarded.");
-                    }
-                }
+            if (q.isCorrect(answer)) {
+                System.out.println(answer + " is the correct answer, added " + q.getValue() + " to score.");
+                score = q.getValue();
+            } else {
+                System.out.println(answer + " is the wrong answer, 0 points awarded.");
+            }
+        }
         return score;
     }
 
-    public void read( File file) {
+    public void read(File file) {
         //Reads each line of file into 3 arrayLists, 1 for each row
         int index = -1;
         String line;
@@ -163,7 +178,7 @@ public class Quiz {
             //Checks if the file cant be found even with the backup location
             if (file == myFileBackup) {
                 System.err.println("File could not be found anywhere");
-                System.err.println("CSV should be placed where a 'src' folder is visible");
+                System.err.println("CSV should be placed where a 'src' folder is visible or if ran from the jar, it should be next to the Jar file");
                 System.exit(1);
             } else {
                 System.err.println("Couldn't find the file, searching the backup location");
@@ -175,12 +190,64 @@ public class Quiz {
         }
     }
 
+    public String returnRead(String name) {
+        String line;
+        try {
+            BufferedReader myBuffer = new BufferedReader(new FileReader(name + ".csv"));
+            line = myBuffer.readLine();
+            return line;
+        } catch (FileNotFoundException fnfe) {
+            System.err.println("Could not find the file specified");
+            return null;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void writeToFile(String output, Player currentPlayer) {
+        try {
+            createFile(currentPlayer);
+            FileWriter myWriter = new FileWriter(currentPlayer.getFirstName() + ".csv", false);
+            myWriter.write(output);
+            myWriter.close();
+        } catch (IOException ioe) {
+            System.err.println("Exception thrown: " + ioe.getMessage());
+        }
+    }
+
+    public void createFile(Player currentPlayer) {
+        File myObj = new File(currentPlayer.getFirstName().toLowerCase() + ".csv");
+        try {
+            if (myObj.createNewFile()) {
+                JOptionPane.showMessageDialog(null, "File Created: " + myObj.getName());
+            } else {
+                JOptionPane.showMessageDialog(null, "File already exists (" + myObj.getName() + ")");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+
     public int getTotalValue() {
         int total = 0;
         for (Integer integer : value) {
             total += integer;
         }
         return total;
+    }
+
+    public String toString(Player currentPlayer) {
+        StringBuilder output = new StringBuilder();
+        output.append(currentPlayer.getFirstName());
+        int size = currentPlayer.getScoreSize();
+        Stack<Integer> working = (Stack<Integer>) currentPlayer.getPreviousScores().clone();
+
+        for (int i = 0; i < size; i++) {
+            output.append("," + working.pop());
+        }
+        return output.toString();
     }
 
     public static void main(String[] args) {

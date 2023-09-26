@@ -1,10 +1,12 @@
-package QuizGame;
+package QuizGame.Questions;
+
+import QuizGame.Question;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MutlipleChoiceQuestion extends Question{
+public class MutlipleChoiceQuestion extends Question {
     protected List<String> options = new ArrayList<>();
 
     private final int correctIndex;
@@ -22,16 +24,18 @@ public class MutlipleChoiceQuestion extends Question{
         //find index of correct answer and store for later
         this.correctIndex = this.options.indexOf(answer);
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "MultipleChoiceQuestion{" +
                 super.toString() +
                 "options=" + options +
                 "correct index=" + correctIndex +
                 '}';
     }
+
     @Override
-    public String getQuestion(){
+    public String getQuestion() {
         StringBuilder output = new StringBuilder(super.getQuestion() + "\n");
 
         for (int i = 0; i < this.options.size(); i++) {
@@ -43,6 +47,7 @@ public class MutlipleChoiceQuestion extends Question{
 
         return output.toString();
     }
+
     @Override
     public boolean isCorrect(String userSays) {
         boolean isCorrect = false;
@@ -52,7 +57,7 @@ public class MutlipleChoiceQuestion extends Question{
             if (correctIndex == userIndex) {
                 isCorrect = true;
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             isCorrect = false;
         }
         return isCorrect;

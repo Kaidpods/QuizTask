@@ -34,11 +34,12 @@ public class Person {
         try {
             Period difference = Period.between(dateOfBirth, LocalDate.now());
             return difference.getYears();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("There is no DOB so the start date and end date cant be compared");
             return 0;
         }
     }
+
     public void setDateOfBirth(String dateOfBirth) throws Exception {
         //check if a date of birth string was supplied before trying to split it
         if (!dateOfBirth.isEmpty()) {
@@ -55,7 +56,12 @@ public class Person {
             System.err.println("There is no date of birth");
         }
     }
-    public String getFullName(){
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getFullName() {
 
         return (firstName + " " + surname);
     }
