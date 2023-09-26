@@ -34,7 +34,13 @@ public class Player extends Person {
     }
 
     public int getLastScore() {
-        return previousScores.peek();
+        try {
+            return previousScores.peek();
+        } catch (Exception e) {
+            System.err.println("previousScores is empty, there are no scores to show");
+            return 0;
+        }
+
     }
 
     public int getHighestScore() {
@@ -45,9 +51,13 @@ public class Player extends Person {
 //use a find maximum algorithm to find the highest score
 //use the working.pop() method to get a value from the stack.
             int maxValue = working.pop();
-            for (int i = 1; i < working.size(); i++){
+            int size = working.size();
+            for (int i = 0; i < size; i++){
                 if (working.peek() > maxValue){
                     maxValue = working.pop();
+                }
+                else {
+                    working.pop();
                 }
             }
             return maxValue;
@@ -56,9 +66,8 @@ public class Player extends Person {
     }
     @Override
     public String toString() {
-        return "Player: " + super.toString() +
-                " previousScores=" + previousScores +
-                '}';
+        return "Player: " + super.getFullName() +
+                " previousScores=" + previousScores;
     }
 }
 

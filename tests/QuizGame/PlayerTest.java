@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
-    Player p1 = new Player("alan", "hart");
+    Player p1 = new Player("Kaiden", "McEvoy");
 
     @Test
     void emptyPlayer() {
-        assertEquals("Player: alan hart previousScores=[]", p1.toString());
+        assertEquals("Player: Kaiden McEvoy previousScores=[]", p1.toString());
         assertEquals(0, p1.getLastScore());
         assertEquals(0, p1.getHighestScore());
     }
@@ -18,7 +18,7 @@ class PlayerTest {
     @Test
     void testSingleScore() {
         p1.recordScore(19);
-        assertEquals("Player: alan hart previousScores=[19]", p1.toString());
+        assertEquals("Player: Kaiden McEvoy previousScores=[19]", p1.toString());
         assertEquals(19, p1.getLastScore());
         assertEquals(19, p1.getHighestScore());
     }
@@ -29,7 +29,7 @@ class PlayerTest {
         p1.recordScore(23);
         p1.recordScore(33);
         p1.recordScore(19);
-        assertEquals("Player: alan hart previousScores=[52, 23, 33, 19]", p1.toString());
+        assertEquals("Player: Kaiden McEvoy previousScores=[52, 23, 33, 19]", p1.toString());
         assertEquals(19, p1.getLastScore());
         assertEquals(52, p1.getHighestScore());
     }
@@ -40,7 +40,7 @@ class PlayerTest {
         p1.recordScore(52);
         p1.recordScore(33);
         p1.recordScore(19);
-        assertEquals("Player: alan hart previousScores=[23, 52, 33, 19]", p1.toString());
+        assertEquals("Player: Kaiden McEvoy previousScores=[23, 52, 33, 19]", p1.toString());
         assertEquals(19, p1.getLastScore());
         assertEquals(52, p1.getHighestScore());
     }
@@ -51,7 +51,7 @@ class PlayerTest {
         p1.recordScore(23);
         p1.recordScore(33);
         p1.recordScore(52);
-        assertEquals("Player: alan hart previousScores=[19, 23, 33, 52]", p1.toString());
+        assertEquals("Player: Kaiden McEvoy previousScores=[19, 23, 33, 52]", p1.toString());
         assertEquals(52, p1.getLastScore());
         assertEquals(52, p1.getHighestScore());
     }

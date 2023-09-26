@@ -14,5 +14,13 @@ public class Address {
         this.county = county;
         this.postcode = postcode;
     }
-
+    @Override
+    public String toString() {
+        return houseNumber +
+                " " + street +
+                ",\n" + town +
+                ",\n" + county +
+                ",\n" + postcode +
+                ".";
+    }
 }

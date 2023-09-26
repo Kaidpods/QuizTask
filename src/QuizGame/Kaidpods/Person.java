@@ -22,17 +22,22 @@ public class Person {
         this.address = address;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getAddress() {
+        return address.toString();
     }
 
-    public int getAge(){
+    public int getAge() {
         /*
         Compares the time between the DOB and today's date, can also be used to get
         other forms of time
          */
-        Period difference = Period.between(dateOfBirth, LocalDate.now());
-        return difference.getYears();
+        try {
+            Period difference = Period.between(dateOfBirth, LocalDate.now());
+            return difference.getYears();
+        }catch (Exception e){
+            System.err.println("There is no DOB so the start date and end date cant be compared");
+            return 0;
+        }
     }
     public void setDateOfBirth(String dateOfBirth) throws Exception {
         //check if a date of birth string was supplied before trying to split it
@@ -46,6 +51,12 @@ public class Person {
             } else {
                 throw new Exception("Date of birth supplied in wrong format.");
             }
+        } else {
+            System.err.println("There is no date of birth");
         }
+    }
+    public String getFullName(){
+
+        return (firstName + " " + surname);
     }
 }
