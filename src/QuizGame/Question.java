@@ -1,21 +1,15 @@
 package QuizGame;
 
 public class Question {
-    private Integer qType;
     private String question;
     private String answer;
 
     private int value;
 
-    public Question(int qType, String question, String answer, int value) {
-        this.qType = qType;
+    public Question(String question, String answer, int value) {
         this.question = question;
         this.answer = answer.toLowerCase();
         this.value = value;
-    }
-
-    public Integer getqType() {
-        return qType;
     }
 
     public String getQuestion() {

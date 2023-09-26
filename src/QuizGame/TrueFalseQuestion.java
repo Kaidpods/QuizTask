@@ -1,8 +1,8 @@
 package QuizGame;
 
 public class TrueFalseQuestion extends Question{
-    public TrueFalseQuestion (Integer qType,String question, Boolean answer, Integer value) {
-        super(qType, question, answer.toString(), value);
+    public TrueFalseQuestion (String question, Boolean answer, Integer value) {
+        super(question, answer.toString(), value);
     }
     @Override
     public String getQuestion() {

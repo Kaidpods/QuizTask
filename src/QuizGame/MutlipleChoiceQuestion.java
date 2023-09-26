@@ -9,8 +9,8 @@ public class MutlipleChoiceQuestion extends Question{
 
     private final int correctIndex;
 
-    public MutlipleChoiceQuestion(Integer qType,String question, String answer, ArrayList<String> options, int points) {
-        super(qType, question, answer, points);
+    public MutlipleChoiceQuestion(String question, String answer, ArrayList<String> options, int points) {
+        super(question, answer, points);
 
         //Populate the list with all options and the correct answer, then finally randomises the list
         for (String choice : options) {

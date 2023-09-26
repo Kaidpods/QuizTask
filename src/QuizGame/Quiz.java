@@ -35,15 +35,15 @@ public class Quiz {
         for (int i = 0; i < numQ; i++) {
             switch (qType.get(i)) {
                 case 1 -> {
-                    Question newQ = new Question(qType.get(i), questions.get(i), answers.get(i), value.get(i));
+                    Question newQ = new Question(questions.get(i), answers.get(i), value.get(i));
                     quizQuestions.add(newQ);
                 }
                 case 2 -> {
-                    TrueFalseQuestion newTFQ = new TrueFalseQuestion(qType.get(i), questions.get(i), Boolean.parseBoolean(answers.get(i)), value.get(i));
+                    TrueFalseQuestion newTFQ = new TrueFalseQuestion( questions.get(i), Boolean.parseBoolean(answers.get(i)), value.get(i));
                     quizQuestions.add(newTFQ);
                 }
                 case 3 -> {
-                    MutlipleChoiceQuestion newMQ = new MutlipleChoiceQuestion(qType.get(i), questions.get(i), answers.get(i), options.get(i), value.get(i));
+                    MutlipleChoiceQuestion newMQ = new MutlipleChoiceQuestion( questions.get(i), answers.get(i), options.get(i), value.get(i));
                     quizQuestions.add(newMQ);
                 }
             }
@@ -99,8 +99,7 @@ public class Quiz {
         String answer = input.nextLine();
 
         //If user entered nothing then it results in a zero
-        switch (q.getqType()) {
-            case 1, 2 -> {
+
                 if (answer.length() < 1) {
                     System.out.println("No answer supplied, 0 points rewarded.");
                 } else {
@@ -112,20 +111,6 @@ public class Quiz {
                         System.out.println(answer + " is the wrong answer, 0 points awarded.");
                     }
                 }
-            }
-            case 3 -> {
-                while (answer.matches(".*[a-z].*")) {
-                    System.out.println("Please only use a number");
-                    answer = input.nextLine();
-                }
-                if (q.isCorrect(answer)) {
-                    System.out.println(answer + " is the correct answer, added " + q.getValue() + " to score.");
-                    score = q.getValue();
-                } else {
-                    System.out.println(answer + " is the wrong answer, 0 points awarded.");
-                }
-            }
-        }
         return score;
     }
 
