@@ -10,17 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9327e0b4-81b9-451e-960c-cec1d893a3c5" name="Changes" comment="To be added">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace-DESKTOP-USODABD.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_09_2023_08_49_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_09_2023_08_49__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizTask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QuizTask.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Questions/MutlipleChoiceQuestion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Questions/MutlipleChoiceQuestion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Quiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuizGame/Questions/MutlipleChoiceQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Questions/MutlipleChoiceQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuizGame/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Quiz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,39 +54,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/mcevo/OneDrive - New College Lanarkshire/HNC Next Gen/IntelliJ",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "cassandra",
-      "mysql"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mcevo/OneDrive - New College Lanarkshire/HNC Next Gen/IntelliJ/QuizTask&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mcevo\OneDrive - New College Lanarkshire\HNC Next Gen\IntelliJ\QuizTask\QuizTask\src\QuizGame" />
@@ -179,9 +162,8 @@
       <workItem from="1694612391665" duration="3513000" />
       <workItem from="1695810923298" duration="2862000" />
       <workItem from="1696410374988" duration="9436000" />
-      <workItem from="1696931006903" duration="94000" />
-      <workItem from="1696931109369" duration="5630000" />
-      <workItem from="1699446218529" duration="383000" />
+      <workItem from="1696861751643" duration="184000" />
+      <workItem from="1698225926602" duration="2154000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <option name="closed" value="true" />
