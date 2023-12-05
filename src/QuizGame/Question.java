@@ -1,6 +1,6 @@
 package QuizGame;
 
-public abstract class Question {
+public abstract class Question implements QuestionADT {
     private String question;
     private String answer;
 
