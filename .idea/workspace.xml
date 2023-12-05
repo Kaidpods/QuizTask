@@ -9,23 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9327e0b4-81b9-451e-960c-cec1d893a3c5" name="Changes" comment="Code adjusted to work with the testing.">
-      <change afterPath="$PROJECT_DIR$/src/QuizGame/Questions/TextQuestion.java" afterDir="false" />
+    <list default="true" id="9327e0b4-81b9-451e-960c-cec1d893a3c5" name="Changes" comment="Readjusted to the non DB version">
+      <change afterPath="$PROJECT_DIR$/src/QuizGame/QuestionADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizTask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QuizTask.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/QuizTask_jar/QuizTask.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/QuizTask_jar/QuizTask.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Kaidpods/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Kaidpods/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/MutlipleChoiceQuestion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/Quiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QuizTask/QuizGame/TrueFalseQuestion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Kaidpods/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuizGame/MutlipleChoiceQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Questions/MutlipleChoiceQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuizGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuizGame/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuizGame/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuizGame/TrueFalseQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGame/Questions/TrueFalseQuestion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +27,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -224,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695722428499</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Readjusted to the non DB version">
+      <option name="closed" value="true" />
+      <created>1701792049423</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701792049423</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +241,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Completed JUnit Testing" />
     <MESSAGE value="Code adjusted to work with the testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code adjusted to work with the testing." />
+    <MESSAGE value="Readjusted to the non DB version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readjusted to the non DB version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
