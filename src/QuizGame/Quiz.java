@@ -1,14 +1,11 @@
 package QuizGame;
 
-import QuizGame.Kaidpods.Database;
 import QuizGame.Questions.MutlipleChoiceQuestion;
 import QuizGame.Questions.TextQuestion;
 import QuizGame.Questions.TrueFalseQuestion;
 
 import javax.swing.*;
 import java.io.*;
-import java.nio.channels.MulticastChannel;
-import java.sql.*;
 import java.util.*;
 
 
@@ -30,11 +27,30 @@ public class Quiz {
     File myFileBackup = new File("QuizTask/questions.csv");
 
     //Throws an exception only if file cant be found
-    public Quiz() throws SQLException {
-        Database dbQuiz = new Database();
-        dbQuiz.connect();
-        quizQuestions = dbQuiz.getAllRows();
-        dbQuiz.disconnect();
+    public Quiz() {
+
+        //Reads in file from a csv
+        read(myFile);
+        //Checks how many instances of the questions there is and loops to create then
+        int numQ = questions.size();
+        for (int i = 0; i < numQ; i++) {
+            switch (qType.get(i)) {
+                case 1 -> {
+                    Question newQ = new TextQuestion(questions.get(i), answers.get(i), value.get(i));
+                    quizQuestions.add(newQ);
+                }
+                case 2 -> {
+                    TrueFalseQuestion newTFQ = new TrueFalseQuestion(questions.get(i), Boolean.parseBoolean(answers.get(i)), value.get(i));
+                    quizQuestions.add(newTFQ);
+                }
+                case 3 -> {
+                    MutlipleChoiceQuestion newMQ = new MutlipleChoiceQuestion(questions.get(i), answers.get(i), options.get(i), value.get(i));
+                    quizQuestions.add(newMQ);
+                }
+            }
+
+        }
+        Collections.shuffle(quizQuestions);
     }
 
     public void start() {
@@ -234,7 +250,7 @@ public class Quiz {
         return output.toString();
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         //Calls the quiz constructor
         Quiz myQuiz = new Quiz();
 
